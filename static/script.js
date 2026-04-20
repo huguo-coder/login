@@ -7,4 +7,6 @@ async function controllacredenziali() {
     const dati = await res.json();
     document.getElementById('Risultato').innerText = dati.messaggio;
 }
+
+
 document.getElementById('btn-registrati').addEventListener('click',controllacredenziali)
