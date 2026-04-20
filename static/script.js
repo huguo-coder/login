@@ -8,5 +8,6 @@ async function controllacredenziali() {
     document.getElementById('Risultato').innerText = dati.messaggio;
 }
 
+if (dati.messaggio===1){
 
 document.getElementById('btn-registrati').addEventListener('click',controllacredenziali)
