@@ -9,8 +9,8 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 def home():
     # Restituisce direttamente il file HTML
     return FileResponse('static/index.html')
-@app.get("/login")
-def controlla(username: str, password: str):
+@app.post("/login")
+def Controlla(username: str = Form(...), password: str = Form(...)):
     print("username", username, "password", password)
 
     if username == "admin" and password == "xxx123":
