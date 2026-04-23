@@ -23,3 +23,4 @@ async function controllacredenziali() {
 
 document.getElementById('bottone').addEventListener('click', loggati);
 document.getElementById('post').addEventListener('click', post);
+
