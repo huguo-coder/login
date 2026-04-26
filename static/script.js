@@ -21,6 +21,6 @@ async function controllacredenziali() {
     }
 }
 
-document.getElementById('bottone').addEventListener('click', loggati);
+document.getElementById('bottone').addEventListener('click', controllacredenziali);
 document.getElementById('post').addEventListener('click', post);
 
