@@ -34,3 +34,11 @@ def Controlla_password(username: str = Form(...), password: str = Form(...)):
         return {"messaggio": 1}
     else:
         return {"messaggio": 0}
+@app.post("/imc")
+def calcola_imc(peso: float = Form(...), altezza: float = Form(...)):
+    if altezza <= 0:
+        return {"errore": "Altezza non valida"}
+
+    imc = peso / (altezza ** 2)
+
+    return {"imc": round(imc, 2)}
