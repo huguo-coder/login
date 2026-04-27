@@ -3,6 +3,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
+df=pd.read_exel()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/") # endpoint  punto dove chimiamo il nostro server web, lo / e la homepage
