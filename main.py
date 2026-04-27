@@ -1,11 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,Form
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 import pandas as pd
 
 
 app = FastAPI()
-df=pd.read_excel("huguo-coder/login/Foglio di lavoro senza nome.xlsx")
+df=pd.read_excel("/workspaces/login/Foglio di lavoro senza nome.xlsx")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
@@ -28,9 +28,9 @@ def Controlla(username: str = Form(...), password: str = Form(...)):
  
 @app.post("/loginpandas")
 def Controlla_password(username: str = Form(...), password: str = Form(...)):
-risultato=df[(df["username"==username]])&(df["password"==password])]
-if not risultato.empty:
-    return {"messaggio":1}
-    else:
-        return{"messaggio":0}
+    risultato = df[(df["username"] == username) & (df["password"] == password)]
 
+    if not risultato.empty:
+        return {"messaggio": 1}
+    else:
+        return {"messaggio": 0}
